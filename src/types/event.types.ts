@@ -13,7 +13,7 @@ export type Event = {
     action: Action,
 }
 
-export type CreateEventBody = Omit<Event, "id" | "occurred_at" |"action" | "actor">
+export type CreateEventBody = Omit<Event, "id" | "occurred_at" |"action" | "actor"> & {action_name: string}
 
 export type CreateEventResponse = {
     event: Event

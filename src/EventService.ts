@@ -13,7 +13,7 @@ export class EventService {
 
     async listEvents(batchSize: number = 5, params?: EventParams) {
         const eventParams = this.buildEventsParamsString(batchSize, params)
-        const { data: response } = await this.httpClient.getRequest<FetchEventsResponse>(`${this.endpoint}${eventParams}`);
+        const { data: response } = await this.httpClient.getRequest<FetchEventsResponse>(`${this.endpoint}?${eventParams}`);
         return response
     }
 

@@ -14,11 +14,12 @@ export class HttpClient {
     }
 
     async getRequest<Response>(endpoint: string) {
-        return await axiosClient.get<Response>(endpoint, {
+        const response = await axiosClient.get<Response>(endpoint, {
             headers: {
                 secret_key: this.secretKey
             }
         });
+        return response;
     }
 
 }
