@@ -1,5 +1,5 @@
 import axios from 'axios'
 
-export const instalogApi = 'http://127.0.0.1:3000/api';
+export const instalogApi = 'https://instalog-backend-production.up.railway.app/api';
 
 export const axiosClient = axios.create({ baseURL: instalogApi })
