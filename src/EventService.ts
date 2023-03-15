@@ -4,7 +4,7 @@ import { instalogApi } from "./utils/axios-config";
 
 export class EventService {
     private readonly endpoint = 'events'
-    constructor(private readonly httpClient: HttpClient) {}
+    constructor(private readonly httpClient: HttpClient) { }
 
     async createEvent(createEventBody: CreateEventBody) {
         const { data: event } = await this.httpClient.postRequest<CreateEventBody, CreateEventResponse>(this.endpoint, createEventBody);
@@ -19,7 +19,7 @@ export class EventService {
 
     private buildEventsParamsString = (batchSize: number, params?: EventParams) => {
         const eventURL = new URL(instalogApi)
-        
+
         eventURL.searchParams.append('batchSize', `${batchSize}`)
 
         if (!params) return eventURL.searchParams.toString()
